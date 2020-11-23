@@ -7,8 +7,8 @@ In computer programming, a software framework is an abstraction in which softwar
 ### 1.1 Web Application w/ Laravel 5.8
 
 Laravel is a PHP Framework for Web Applications. If you are not familiar with it please read the following sections of the Laravel Docs:
-https://laravel.com/docs/5.8/configuration
-https://laravel.com/docs/5.8/structure
+- https://laravel.com/docs/5.8/configuration
+- https://laravel.com/docs/5.8/structure
 
 ### 1.2 Automated Testing w/ PHPUnit
 
