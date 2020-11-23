@@ -34,6 +34,7 @@ For more information on REST set of constraints please refer to: https://restful
 ## 3. Setting up environment
 
 ### 3.1 Create SQLite database
+Inside /backend
 ```bash
 touch database/database.sqlite
 ```
@@ -45,6 +46,7 @@ DB_DATABASE=/absolute/path/to/database.sqlite
 For more information: https://laravel.com/docs/5.8/database#configuration
 
 ### 3.2 Serve Laravel
+Inside /backend
 ```bash
 php artisan serve --port 8000
 ```
