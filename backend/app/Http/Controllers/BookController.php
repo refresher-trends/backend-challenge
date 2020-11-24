@@ -28,11 +28,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-    	$validator = Validator::make($request->only('title', 'author', 'rating_information'), [
-    		'title' => 'required',
-    		'author' => 'required',
-    		'rating_information' => 'required'
-    	]);
+    	$validator = $this->getValidator($request);
     	if ($validator->fails()) {
     		return response()->json([
     			'message' => 'Requisição inválida',
@@ -46,6 +42,7 @@ class BookController extends Controller
     	$date = new DateTime();
     	$book->release_date = $date->format('Y-m-d H:i:s');
     	$book->save();
+    	return response()->json($book);
     }
 
     /**
@@ -57,7 +54,32 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+    	$validator = $this->getValidator($request);
+    	if ($validator->fails()) {
+    		return response()->json([
+    			'message' => 'Requisição inválida',
+    			'errors' => $validator->errors()->all()
+    		], 422);
+    	}
+        $book = Book::find($id);
+        if (!$book) {
+            return response()->json([
+                'message'   => 'Registro não encontrado',
+            ], 404);
+        }
+        $book->title = $request->title;
+    	$book->author = $request->author;
+    	$book->rating_information = $request->rating_information;
+        $book->save();
+        return response()->json($book);
+    }
+
+    private function getValidator(Request $request) {
+    	return Validator::make($request->only('title', 'author', 'rating_information'), [
+    		'title' => 'required',
+    		'author' => 'required',
+    		'rating_information' => 'required'
+    	]);
     }
 
     /**
