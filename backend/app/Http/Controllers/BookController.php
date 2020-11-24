@@ -20,6 +20,21 @@ class BookController extends Controller
         return response()->json(Book::all());
     }
 
+    public function show($id)
+    {
+    	$book = Book::find($id);
+
+    	if (!$book)
+    	{
+    		return response()->json([
+    			'message'   => 'Registro não encontrado',
+    		], 404);
+    	}
+
+    	return response()->json($book);
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
