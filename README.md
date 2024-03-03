@@ -4,11 +4,11 @@
 
 In computer programming, a software framework is an abstraction in which software providing generic functionality can be selectively changed by additional user-written code, thus providing application-specific software.
 
-### 1.1 Web Application w/ Laravel 6.x
+### 1.1 Web Application w/ Laravel 7.x
 
 Laravel is a PHP Framework for Web Applications. If you are not familiar with it please read the following sections of the Laravel Docs:
-- https://laravel.com/docs/6.x/configuration
-- https://laravel.com/docs/6.x/structure
+- https://laravel.com/docs/7.x/configuration
+- https://laravel.com/docs/7.x/structure
 
 ### 1.2 Automated Testing w/ PHPUnit
 
@@ -43,7 +43,7 @@ then in .env
 DB_CONNECTION=sqlite
 DB_DATABASE=/absolute/path/to/database.sqlite
 ```
-For more information: https://laravel.com/docs/6.x/database#configuration
+For more information: https://laravel.com/docs/7.x/database#configuration
 
 ### 3.2 Serve Laravel
 Inside /backend
@@ -55,7 +55,7 @@ This will serve a Laravel development server at http://localhost:8000
 ---
 ## 4. Challenge
 Create a book managing application (CRUD) containing:
-- A [Migration](https://laravel.com/docs/6.x/migrations#generating-migrations) with author, title, release date and rating information;
-- A [Eloquent Model](https://laravel.com/docs/6.x/eloquent#defining-models) for the created migration;
-- A **REST compliant** [Resource Controller](https://laravel.com/docs/6.x/controllers#resource-controllers) containing index, store, update and destroy methods;
+- A [Migration](https://laravel.com/docs/7.x/migrations#generating-migrations) with author, title, release date and rating information;
+- A [Eloquent Model](https://laravel.com/docs/7.x/eloquent#defining-models) for the created migration;
+- A **REST compliant** [Resource Controller](https://laravel.com/docs/7.x/controllers#resource-controllers) containing index, store, update and destroy methods;
 - Automated unit tests w/ PHPUnit to ensure the application expected outputs.
